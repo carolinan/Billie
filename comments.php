@@ -5,7 +5,7 @@
  * The area of the page that contains both current comments
  * and the comment form.
  *
- * @package billie
+ * @package Billie
  */
 
 /*
@@ -22,7 +22,7 @@ if ( post_password_required() ) {
 	if ( have_comments() ) { ?>
 		<h2 class="comments-title">
 			<?php
-			printf( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'billie' ),
+			printf( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'billie' ),
 			number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
 			?>
 		</h2>

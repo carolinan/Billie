@@ -18,7 +18,6 @@ get_header(); ?>
 			endwhile;
 			billie_bottom_sections();
 			?>
-
 		</main><!-- #main -->
 	</div><!-- #primary -->
 

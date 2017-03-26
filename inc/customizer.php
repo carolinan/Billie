@@ -267,6 +267,17 @@ function billie_customize_register( $wp_customize ) {
 		'render_callback' => 'bille_bottom_sections',
 	) );
 
+
+	$wp_customize->add_setting( 'billie_hide_credits', array(
+		'sanitize_callback' => 'billie_sanitize_checkbox',
+	) );
+	$wp_customize->add_control( 'billie_hide_credits', array(
+		'type' => 'checkbox',
+		'label' => __( 'Check this box to hide the Theme Author credit in the footer =(.', 'billie' ),
+		'section' => 'billie_section_advanced',
+	) );
+
+
 	/* if jetpack is installed, add the featured heading to the customizer. */
 	$wp_customize->add_setting( 'billie_featured_headline',		array(
 		'sanitize_callback' => 'billie_sanitize_text',
@@ -287,6 +298,8 @@ function billie_customize_register( $wp_customize ) {
 	if ( billie_has_featured_posts( 1 ) ) {
 		$wp_customize->get_setting( 'billie_featured_headline' )->transport  = 'postMessage';
 	}
+
+
 }
 add_action( 'customize_register', 'billie_customize_register' );
 
@@ -304,12 +317,18 @@ function billie_sanitize_text( $input ) {
 	return wp_kses_post( force_balance_tags( $input ) );
 }
 
-function billie_sanitize_checkbox( $input ) {
-	if ( $input == 1 ) {
-		return 1;
-	} else {
-		return '';
-	}
+/**
+ * Checkbox sanitization callback, from https://github.com/WPTRT/code-examples/blob/master/customizer/sanitization-callbacks.php
+ *
+ * Sanitization callback for 'checkbox' type controls. This callback sanitizes `$checked`
+ * as a boolean value, either TRUE or FALSE.
+ *
+ * @param bool $checked Whether the checkbox is checked.
+ * @return bool Whether the checkbox is checked.
+ */
+function billie_sanitize_checkbox( $checked ) {
+	// Boolean check.
+	return ( ( isset( $checked ) && true == $checked ) ? true : false );
 }
 
 // Sanitize bg position.

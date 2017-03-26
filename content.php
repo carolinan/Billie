@@ -2,7 +2,7 @@
 /**
  * The template part for displaying content.
  *
- * @package billie
+ * @package Billie
  */
 
 ?>

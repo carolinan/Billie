@@ -21,15 +21,6 @@ if ( ! function_exists( 'billie_setup' ) ) {
 	 * as indicating support for post thumbnails.
 	 */
 	function billie_setup() {
-		/*
-		 * Make theme available for translation.
-		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on billie, use a find and replace
-		 * to change 'billie' to the name of your theme in all the template files
-		 */
-		load_theme_textdomain( 'billie' );
-
-		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
 
 		add_theme_support( 'woocommerce' );
@@ -78,7 +69,7 @@ add_action( 'after_setup_theme', 'billie_setup' );
 * Unless the option is hidden in the customizer, display the site title (with link) in the primary menu.
 */
 
-if ( ! get_theme_mod( 'billie_hide_title') ) {
+if ( ! get_theme_mod( 'billie_hide_title' ) ) {
 	function billie_menu_title( $items, $args ) {
 	    if ( $args->theme_location == 'header' ) {
 	    	$new_item       = array( '<li class="toptitle"><a href="' . esc_url( home_url( '/' ) ) . '" rel="home">' . get_bloginfo( 'name' ) . '</a></li>' );
@@ -179,8 +170,8 @@ if ( ! function_exists( 'billie_fonts_url' ) ) :
 
 		if ( $fonts ) {
 			$fonts_url = add_query_arg( array(
-				'family' => urlencode( implode( '|', $fonts ) ),
-				'subset' => urlencode( $subsets ),
+				'family' => rawurlencode( implode( '|', $fonts ) ),
+				'subset' => rawurlencode( $subsets ),
 			), '//fonts.googleapis.com/css' );
 		}
 
@@ -204,18 +195,6 @@ function billie_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'billie_scripts' );
-
-/**
- * Enqueue styles for the setup help page.
- */
-function billie_admin_scripts( $hook ) {
-	if ( 'appearance_page_billie-theme' !== $hook ) {
-		return;
-	}
-	wp_enqueue_style( 'billie-admin-style', get_template_directory_uri() . '/admin.css' );
-}
-add_action( 'admin_enqueue_scripts', 'billie_admin_scripts' );
-
 
 /**
  * Custom header for this theme.
@@ -248,7 +227,8 @@ function billie_post_title( $title ) {
 }
 
 function billie_no_sidebars( $classes ) {
-	/** Are sidebars hidden on the frontpage?
+	/**
+	 * 		Are sidebars hidden on the frontpage?
 	 *		Is the sidebar activated?
 	 *		Add 'no-sidebar' to the $classes array
 	*/
@@ -323,7 +303,7 @@ add_action( 'wp_head', 'billie_customize_css' );
 if ( ! function_exists( 'billie_top_sections' ) ) {
 	function billie_top_sections() {
 		/*The front page sections should not display on the blog listing page*/
-		if ( is_front_page() && is_home() ) {
+		if ( is_front_page() && is_home() || is_page_template( 'templates/sections.php' ) ) {
 			if ( get_theme_mod( 'billie_top_section1' ) or get_theme_mod( 'billie_top_section2' ) or get_theme_mod( 'billie_top_section3' ) ) {
 				$args = array(
 					'post_type' => 'page',
@@ -351,9 +331,8 @@ if ( ! function_exists( 'billie_top_sections' ) ) {
 if ( ! function_exists( 'billie_bottom_sections' ) ) {
 	function billie_bottom_sections() {
 		/*The front page sections should not display on the blog listing page*/
-		if ( is_front_page() && is_home() ) {
+		if ( is_front_page() && is_home() || is_page_template( 'templates/sections.php' ) ) {
 			if ( get_theme_mod( 'billie_bottom_section1' ) or get_theme_mod( 'billie_bottom_section2' ) or get_theme_mod( 'billie_bottom_section3' ) ) {
-
 				$bottomargs = array(
 					'post_type' => 'page',
 					'orderby' => 'post__in',
@@ -388,7 +367,7 @@ if ( ! function_exists( 'billie_featured_sections' ) ) {
 				echo '<div class="featured-post">';
 				if ( has_post_thumbnail() ) {
 					$background = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'billie-featured-posts-thumb' );
-					echo '<div class="featured-inner" style="background: url(' . $background[0] . ');">';
+					echo '<div class="featured-inner" style="background: url(' . esc_url( $background[0] ) . ');">';
 				} else {
 					echo '<div class="featured-inner" style="background: ' . esc_attr( get_theme_mod( 'billie_header_bgcolor', '#9cc9c7' ) ) . ';">';
 				}
@@ -404,8 +383,7 @@ if ( ! function_exists( 'billie_featured_sections' ) ) {
 						esc_attr( get_the_date( 'c' ) ),
 						esc_html( get_the_date() )
 					);
-					$posted_on = $time_string;
-					echo $posted_on;
+					echo $time_string;
 					echo '</span>
 					</span>
 					</div></div>';
@@ -415,4 +393,4 @@ if ( ! function_exists( 'billie_featured_sections' ) ) {
 			echo '</section>';
 		}
 	}
-}
+} // End if().

@@ -2,7 +2,7 @@
 /**
  * Template Name: Static and Featured
  *
- * Description: A Page Template that displays your static frontpage and featured content, but no sidebar
+ * Description: A Page Template that displays your static frontpage and Jetpack featured content, but no sidebar
  *
  * @package Billie
  */

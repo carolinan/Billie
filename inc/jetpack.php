@@ -3,7 +3,7 @@
  * Jetpack Compatibility File
  * See: http://jetpack.me/
  *
- * @package billie
+ * @package Billie
  */
 
 /**
@@ -20,10 +20,10 @@ function billie_jetpack_setup() {
 	add_image_size( 'billie-jetpack-logo', 200, 200 );
 	add_image_size( 'billie-jetpack-testimonial', 100, 100 );
 
-	/*Support for Jetpack logo*/
-	 add_theme_support( 'site-logo', array( 'size' => 'billie-jetpack-logo',) );
+	/* Support for Jetpack logo */
+	 add_theme_support( 'site-logo', array( 'size' => 'billie-jetpack-logo' ) );
 
-	/*Support for Jetpack featured-content*/ 
+	/* Support for Jetpack featured-content */
 	add_theme_support( 'featured-content', array(
 		'filter'     => 'billie_get_featured_posts',
 		'max_posts'  => 6,

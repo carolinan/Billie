@@ -2,7 +2,7 @@
 /**
  * The Template for displaying all single projects.
  *
- * @package billie
+ * @package Billie
  */
 
 get_header(); ?>

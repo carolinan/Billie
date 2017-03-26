@@ -2,7 +2,7 @@
 /**
  * The sidebar containing the main widget area for the frontpage
  *
- * @package billie
+ * @package Billie
  */
 
 if ( ! is_active_sidebar( 'sidebar-3' ) ) {

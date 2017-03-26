@@ -4,7 +4,7 @@
  *
  * Contains the closing of the #content div and all content after
  *
- * @package billie
+ * @package Billie
  */
 
 ?>
@@ -38,10 +38,14 @@
 			if ( is_active_sidebar( 'sidebar-copyright' ) ) {
 				 dynamic_sidebar( 'sidebar-copyright' );
 			}
-			?>
+
+			if ( ! get_theme_mod( 'billie_hide_credits' ) ) {	?>
 		<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'billie' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'billie' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
 			<a href="<?php echo esc_url( 'http://wptema.se/billie' ); ?>" rel="nofollow"><?php printf( __( 'Theme: %1$s by Carolina', 'billie' ), 'Billie'); ?></a>
+			<?php
+			}
+			?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

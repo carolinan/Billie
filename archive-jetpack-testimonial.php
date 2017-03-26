@@ -1,10 +1,10 @@
 <?php
 /**
- * The template for displaying the testimonial archive pages.
+ * The template for displaying the Jetpack testimonial archive pages.
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package billie
+ * @package Billie
  */
 
 get_header();
@@ -13,7 +13,7 @@ $jetpack_options = get_theme_mod( 'jetpack_testimonials' );
 
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
-	<?php
+		<?php
 		if ( have_posts() ) : ?>
 			<header class="page-header">
 				<h1 class="page-title">

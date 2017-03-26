@@ -2,7 +2,7 @@
 /**
  * Custom template tags for this theme.
  *
- * @package billie
+ * @package Billie
  */
 
 if ( ! function_exists( 'billie_posted_on' ) ) {
@@ -27,7 +27,7 @@ if ( ! function_exists( 'billie_posted_on' ) ) {
 		$byline = '<a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a>';
 			echo '<span class="byline">' . $byline . '</span><span class=" posted-on"> ' . $posted_on . '</span>';
 			/* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list( '#', ' #', '');
+			$tags_list = get_the_tag_list( '#', ' #', '' );
 			if ( $tags_list ) {
 				echo '<span class="tags-links"> ' . $tags_list . '</span>';
 			}
@@ -81,7 +81,7 @@ if ( ! function_exists( 'billie_portfolio_footer' ) ) {
 	 * Prints HTML with meta information for the categories, tags and comments.
 	 */
 	function billie_portfolio_footer() {
-		if ( ! get_theme_mod('billie_hide_meta') ) {
+		if ( ! get_theme_mod( 'billie_hide_meta' ) ) {
 			echo '<footer class="entry-footer">';
 
 			global $post;
@@ -117,7 +117,7 @@ add_filter( 'excerpt_more', 'billie_excerpt_more',100 );
 
 
 function billie_custom_excerpt_more( $output ) {
-	if ( has_excerpt() && !is_attachment() ) {
+	if ( has_excerpt() && ! is_attachment() ) {
 		global $id;
 		$output .= ' ' . billie_continue_reading( $id ); // insert a blank space.
 	}

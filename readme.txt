@@ -7,7 +7,7 @@ Copyright 2015-2017 Carolina Nymark
 
 = Description ==
 
-Description: Billie is a responsive, accessibility-ready multi-purpose theme. The theme has two optional menus (including a social menu) several different sidebars and a footer widget area that will hold any number of widgets. 
+Description: Billie is a responsive, accessibility-ready theme. The theme has two optional menus (including a social menu) several different sidebars and a footer widget area that will hold any number of widgets. 
 Features also include a Call To Action button and custom copyright text. We recommend that you install the Jetpack plugin to make full use of supported features like featured content, contact forms, testimonials, social sharing and more. 
 To create a portfolio, install Jetpack and create your projects, all the templates are already shipped with the theme. 
 If you have any questions, accessibility issues or feature requests for this theme, please visit http://wptema.se/Billie.
@@ -22,16 +22,21 @@ Please note that changing the colors of the theme can affect accessibility.
 
 == Change log ==
 
+Version 1.0.8 2017-03-26
+Added an option to hide the footer credit links.
+Fixed an error with the section page template.
+Fied an error with a missing placehoder.
+Removed code and files that remained from the help page.
+
+
+
 Version 1.0.7 2017-01-22
 Removed unsed files. 
 Removed the reset from the customizer.
-Removed the set up help. Unfortunately documentation in this format has proven too difficult to maintain.
+Removed the set up help. -Unfortunately documentation in this format has proven too difficult to maintain and translate. :(
 Simplified the code used to present the comments.
 Moved the page sections into their own functions.
 Added support for selective refresh.
-Php improvements according to WordPress coding standards.
-
-
 
 Version 1.0.6 2016-09-24
 Fixed errors with the setup help page.

@@ -2,7 +2,7 @@
 /**
  * The sidebar containing the main widget area for posts.
  *
- * @package billie
+ * @package Billie
  */
 
 if ( is_archive() && is_active_sidebar( 'sidebar-4' ) || is_search() && is_active_sidebar( 'sidebar-4' ) ) {
