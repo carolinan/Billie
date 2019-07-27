@@ -1,0 +1,72 @@
+.edit-post-visual-editor,
+.edit-post-visual-editor .editor-block-list__block-edit,
+.edit-post-visual-editor .editor-block-list__block {
+   font-family: 'Open Sans', sans-serif;
+}
+
+/* Matches entry-title in style.css. */
+.editor-post-title__block .editor-post-title__input {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    text-decoration: none;
+    padding-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: normal;
+    background: url(../images/border.png) repeat-x bottom;
+}
+
+a:focus {
+	outline: thin dotted;
+}
+
+a:hover,
+a:active {
+	outline: 0;
+}
+
+a img {
+	border: 0;
+}
+
+a {
+    text-decoration: underline;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a {
+	color: #666;
+}
+
+a:visited {
+	color: #666;
+}
+
+a:hover,
+a:focus,
+a:active {
+	color: #000;
+}
+
+.wp-block-button__link {
+    text-decoration: underline;
+}
+
+.wp-block-button__link:hover,
+.wp-block-button__link:focus {
+    text-decoration: none;
+}
+
+/*increase contrast*/
+.edit-post-visual-editor p.wp-block-subhead {
+    color: #000;
+}
+
+.wp-block-latest-comments__comment-date,
+.wp-block-quote cite,
+.wp-block-audio figcaption {
+	color: #333;
+}

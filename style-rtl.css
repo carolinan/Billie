@@ -82,6 +82,8 @@ html {
 
 body {
 	background: #fafafa;
+	direction: rtl;
+	unicode-bidi: embed;
 }
 
 article,
@@ -110,7 +112,7 @@ caption,
 th,
 td {
 	font-weight: normal;
-	text-align: left;
+	text-align: right;
 }
 
 blockquote:before,
@@ -181,8 +183,8 @@ i {
 
 blockquote {
 	margin-bottom: 2em;
-	border-left: 4px solid #000;
-	padding-left: 1em;
+	border-right: 4px solid #000;
+	padding-right: 1em;
 }
 
 address {
@@ -259,7 +261,7 @@ hr {
 
 ul,
 ol {
-	margin: 0 0 1.5em 3em;
+	margin: 0 3em 1.5em 0;
 }
 
 ul {
@@ -273,7 +275,7 @@ ol {
 li > ul,
 li > ol {
 	margin-bottom: 0;
-	margin-left: 1.5em;
+	margin-right: 1.5em;
 }
 
 dt {
@@ -337,7 +339,7 @@ input[type="submit"] {
 	-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
 	font-size: 1.4rem;
 	line-height: 1;
-	padding: .6em 1em .6em;
+	padding: .6em 1em .4em;
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
@@ -410,7 +412,7 @@ input[type="search"] {
 
 textarea {
 	overflow: auto; /* Removes default vertical scrollbar in IE6/7/8/9 */
-	padding-left: 3px;
+	padding-right: 3px;
 	vertical-align: top; /* Improves readability and alignment in all browsers */
 	width: 100%;
 }
@@ -450,10 +452,10 @@ textarea {
 	font-size: 14px; 
 	line-height: 1; 
 	color: #717171;
-	margin-right: 10px;
+	margin-left: 10px;
 	margin-top: 4px;
 	vertical-align: middle;	
-	float: left;
+	float: right;
 	text-decoration: none; 
 }
 
@@ -467,7 +469,7 @@ textarea {
 	font-size: 14px; 
 	line-height: 1; 
 	color: #717171;
-	margin-left:10px;
+	margin-right:10px;
 	vertical-align: middle;	
 	text-decoration: none; 
 }
@@ -483,8 +485,8 @@ textarea {
 .post-navigation .nav-previous {
 	display: inline-block;
 	vertical-align: top;
-	float: left;
-	text-align: left;
+	float: right;
+	text-align: right;
 	width: 40%;
 	font-size:1.6rem;
 	padding: 12px; 
@@ -497,8 +499,8 @@ textarea {
 .post-navigation .nav-next {
 	display: inline-block;
 	vertical-align: top;
-	float: right;
-	text-align: right;
+	float: left;
+	text-align: left;
 	width: 40%;
 	font-size:1.6rem;
 	padding: 12px; 
@@ -531,7 +533,7 @@ textarea {
 }
 
 .crumbs ul{
-	margin-left: 0;
+	margin-right: 0;
 }
 
 .crumbs li {
@@ -581,7 +583,7 @@ a:active {
 }
 
 .main-navigation li {
-	float: left;
+	float: right;
 	position: relative;
 	margin: 8px;
 }
@@ -594,7 +596,7 @@ a:active {
     border-radius: 3px;
     display: inline-block;
     background: rgba(255,255,255,0.3);
-    text-align: left;
+    text-align: right;
 }
 
 .main-navigation a:focus,
@@ -622,14 +624,14 @@ a:active {
 	min-width: 238px;
 	width: auto;
 	top: auto;
-	padding-right: 1em;
+	padding-left: 1em;
 	padding-top: 8px;
 	clip: rect(1px, 1px, 1px, 1px);
 	z-index: 999; 
 }
 
 .main-navigation ul ul li {
-	margin-left: 0;
+	margin-right: 0;
 }
 
 /*make sure that the items are visible if they are overlapping*/
@@ -708,7 +710,7 @@ a:active {
 	
 	.main-navigation ul li {
 		width: 100%;
-		float: left;
+		float: right;
 		position: relative;
 	}
 
@@ -841,7 +843,7 @@ li a:before {
 	font-size: 1.4rem;
 	font-weight: bold;
 	height: auto;
-	left: 5px;
+	right: 5px;
 	line-height: normal;
 	padding: 15px 23px 14px;
 	text-decoration: none;
@@ -855,14 +857,14 @@ li a:before {
 --------------------------------------------------------------*/
 .alignleft {
 	display: inline;
-	float: left;
-	margin-right: 1.5em;
+	float: right;
+	margin-left: 1.5em;
 }
 
 .alignright {
 	display: inline;
-	float: right;
-	margin-left: 1.5em;
+	float: left;
+	margin-right: 1.5em;
 }
 
 .aligncenter {
@@ -882,19 +884,19 @@ li a:before {
 }
 
 .wp-block-image .alignleft {
-	margin: 0 2em 2em 0;
-}
-
-.wp-block-cover.alignleft {
-	margin-right: 2em;
-}
-
-.wp-block-image .alignright {
 	margin: 0 0 2em 2em;
 }
 
-.wp-block-cover.alignright {
+.wp-block-cover.alignleft {
 	margin-left: 2em;
+}
+
+.wp-block-image .alignright {
+	margin: 0 2em 2em 0;
+}
+
+.wp-block-cover.alignright {
+	margin-right: 2em;
 }
 
 .wp-block-audio.aligncenter {
@@ -902,7 +904,7 @@ li a:before {
 }
 
 .wp-block-categories.aligncenter {
-    padding-left: 2.5em;
+    padding-right: 2.5em;
 }
 
 /*--------------------------------------------------------------
@@ -962,7 +964,7 @@ li a:before {
 	box-sizing: border-box;	
 	width: 100%;
 	text-transform: uppercase;
-	text-align: left;
+	text-align: right;
 }
 
 .widget-title,
@@ -977,16 +979,16 @@ li a:before {
 .widget ul {
 	padding: 0;
 	margin: 0;
-	float: left;
+	float: right;
 	width: 100%;
 }
 
 .widget ul li {
 	list-style: none;
 	font-weight: normal;
-	margin: 9px 0 9px 9px;
-	padding: 0 0 4px 8px;
-	text-align: left;
+	margin: 9px 9px 9px 0;
+	padding: 0 8px 4px 0;
+	text-align: right;
 	background: url('images/border.png') repeat-x bottom;
 }
 
@@ -1069,7 +1071,7 @@ table#wp-calendar,
 
 .rss-date {
 	width: 90%; 
-	float: left; 
+	float: right; 
 	clear: both;
 }
 
@@ -1109,8 +1111,8 @@ table#wp-calendar,
 
 .site-branding {
 	margin-top: 40px;
-	margin-right: auto;
 	margin-left: auto;
+	margin-right: auto;
 	position: relative;
 	z-index: 400;
 }
@@ -1161,7 +1163,7 @@ table#wp-calendar,
 	display: inline-block;
 	width: 60%;
 	margin: 0 auto;
-	text-align: left;
+	text-align: right;
 }
 
 .site-main {
@@ -1171,8 +1173,8 @@ table#wp-calendar,
 .site-content .widget-area {
 	margin: 105px auto;
 	width: 25%;
-	padding: 5px 2% 0 4%;
-	text-align: left;
+	padding: 5px 4% 0 2%;
+	text-align: right;
 	display: inline-block;
 	vertical-align: top;
 }
@@ -1249,8 +1251,6 @@ table#wp-calendar,
 	border-radius: 4px;
 	box-shadow: 0 1px 6px rgba(0,0,0,0.2);
 }
-
-.sticky{}
 
 .type-topic,
 .type-forum,
@@ -1356,12 +1356,12 @@ table#wp-calendar,
 
 .byline,
 .cat-links{
-	margin-right: 8px;
+	margin-left: 8px;
 }
 
 .single-jetpack-portfolio .entry-footer {
 	width: 100%;
-	float: left;
+	float: right;
 }
 
 .type-page .entry-footer{
@@ -1394,10 +1394,10 @@ table#wp-calendar,
 	clear: both;
 	width: 100%;
 	margin-bottom: 8px;
-	margin-left: 8px;
 	margin-right: 8px;
-    padding-left: 12px;
-    border-left: #d5dbde 1px solid;
+	margin-left: 8px;
+    padding-right: 12px;
+    border-right: #d5dbde 1px solid;
 }
 
 .not-found .page-title:before {
@@ -1409,7 +1409,7 @@ table#wp-calendar,
 	-moz-osx-font-smoothing: grayscale;
 	line-height: 1; 
 	text-decoration: none; 
-	margin: 0 10px 0 5px;
+	margin: 0 5px 0 10px;
 	padding: 0;
 	color: #666;
 }
@@ -1467,7 +1467,7 @@ table#wp-calendar,
 }
 
 .comment-metadata .edit-link {
-	margin-left: 10px;
+	margin-right: 10px;
 }
 
 .comment-metadata a {
@@ -1499,7 +1499,7 @@ table#wp-calendar,
 
 .comment-meta .fn {
 	vertical-align: top;
-	margin-left: 15px;
+	margin-right: 15px;
 	font-size: 1.8rem;
 }
 
@@ -1534,7 +1534,7 @@ table#wp-calendar,
 
 .required {
 	font-weight: normal;
-	margin-left: 3px;
+	margin-right: 3px;
 }
 
 .comment-form input[type='text'], 
@@ -1620,12 +1620,12 @@ table#wp-calendar,
 .tag-list {
     padding: 0;
     margin: 0;
-    margin-left: 12px;
+    margin-right: 12px;
     color:#666;
     display: inline-block;
-    margin-left: 8px;
-    padding-left: 12px;
-    border-left: #d5dbde 1px solid;
+    margin-right: 8px;
+    padding-right: 12px;
+    border-right: #d5dbde 1px solid;
 }
 
 .featured-text {
@@ -1909,7 +1909,7 @@ div.bbp-template-notice p {
 }
 
 .subscription-toggle {
-	float: right;
+	float: left;
 	margin-bottom: 25px;
 }
 
@@ -1967,7 +1967,7 @@ span.bbp-admin-links a,
 	display: inline-block;
 	width: 60%;
 	margin: 0 auto;
-	text-align: left;
+	text-align: right;
     padding: 45px 65px;
     margin: 0 0 65px 0;
     background: #fcfcfc url(images/border.png) repeat-x bottom;
@@ -2104,11 +2104,11 @@ blockquote.wp-block-quote.is-style-large {
 
 blockquote.wp-block-quote.is-style-large cite {
     font-size: 13px;
-	text-align: left;
+	text-align: right;
 }
 
 .wp-block-pullquote blockquote {
-	border-left: none;
+	border-right: none;
 }
 
 .wp-block-pullquote
@@ -2121,7 +2121,7 @@ blockquote.wp-block-quote.is-style-large cite {
 }
 
 p.has-drop-cap:first-letter {
-	margin: .07em .13em 0 0;
+	margin: .07em 0 0 .13em;
 }
 
 .has-billie-blue-color {
@@ -2153,8 +2153,8 @@ p.has-drop-cap:first-letter {
 	.site-content .widget-area {
 		width: 100%;
 		margin-top: 15px;
-		margin-left: 0;
 		margin-right: 0;
+		margin-left: 0;
 		padding: 0;
 	}
 
@@ -2162,8 +2162,8 @@ p.has-drop-cap:first-letter {
 	.widget {
 		width: auto;
 		min-width: 31%;
-		margin-left: 0;
-		margin-right: 20px;
+		margin-right: 0;
+		margin-left: 20px;
 	}
 
 	.type-jetpack-testimonial, 
@@ -2257,7 +2257,7 @@ p.has-drop-cap:first-letter {
 	.site-footer .widget,
 	.widget {
 		width: 100%;	
-		margin-right: 0;
+		margin-left: 0;
 	}
 	
 	.site-title {

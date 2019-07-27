@@ -19,10 +19,12 @@
 
 		the_content();
 
-		wp_link_pages( array(
-			'before' => '<div class="page-links">' . __( 'Pages:', 'billie' ),
-			'after'  => '</div>',
-		) );
+		wp_link_pages(
+			array(
+				'before' => '<div class="page-links">' . __( 'Pages:', 'billie' ),
+				'after'  => '</div>',
+			)
+		);
 		?>
 	</div><!-- .entry-content -->
 </article><!-- #post-## -->
