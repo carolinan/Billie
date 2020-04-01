@@ -57,17 +57,20 @@ function billie_get_featured_posts() {
  * @param int $minimum The minimum number of posts to check for.
  */
 function billie_has_featured_posts( $minimum ) {
-	if ( is_paged() )
-	return false;
+	if ( is_paged() ) {
+		return false;
+	}
 
 	$minimum        = absint( $minimum );
 	$featured_posts = apply_filters( 'billie_get_featured_posts', array() );
 
-	if ( ! is_array( $featured_posts ) )
+	if ( ! is_array( $featured_posts ) ) {
 		return false;
+	}
 
-	if ( $minimum > count( $featured_posts ) )
+	if ( $minimum > count( $featured_posts ) ) {
 		return false;
+	}
 
 	return true;
 }

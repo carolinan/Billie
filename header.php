@@ -27,7 +27,6 @@ if ( function_exists( 'wp_body_open' ) ) {
 ?>
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'billie' ); ?></a>
-	<header id="masthead" class="site-header" role="banner">
 	<?php
 	if ( has_nav_menu( 'header' ) ) {
 		?>
@@ -40,7 +39,6 @@ if ( function_exists( 'wp_body_open' ) ) {
 				array(
 					'theme_location' => 'header',
 					'fallback_cb'    => false,
-					'depth'          => 2,
 				)
 			);
 			?>
@@ -48,7 +46,8 @@ if ( function_exists( 'wp_body_open' ) ) {
 		<?php
 	}
 	?>
-	<div class="site-branding">	
+	<header id="masthead" class="site-header" role="banner">
+	<div class="site-branding">
 		<?php
 		the_custom_logo();
 

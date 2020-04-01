@@ -8,40 +8,41 @@
  */
 
 get_header();
-$jetpack_options = get_theme_mod( 'jetpack_testimonials' );
+$billie_jetpack_options = get_theme_mod( 'jetpack_testimonials' );
 ?>
 
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
 		<?php
-		if ( have_posts() ) : ?>
+		if ( have_posts() ) {
+			?>
 			<header class="page-header">
 				<h1 class="page-title">
 					<?php
-					if ( isset( $jetpack_options['page-title'] ) && '' !== $jetpack_options['page-title'] ) {
-						echo esc_html( $jetpack_options['page-title'] );
+					if ( isset( $billie_jetpack_options['page-title'] ) && '' !== $billie_jetpack_options['page-title'] ) {
+						echo esc_html( $billie_jetpack_options['page-title'] );
 					} else {
 						esc_html_e( 'Testimonials', 'billie' );
 					}
 					?>
 				</h1>
 				<?php
-				if ( isset( $jetpack_options['featured-image'] ) && '' !== $jetpack_options['featured-image'] ) {
-					echo wp_get_attachment_image( (int) $jetpack_options['featured-image'], 'billie-jetpack-logo' );
+				if ( isset( $billie_jetpack_options['featured-image'] ) && '' !== $billie_jetpack_options['featured-image'] ) {
+					echo wp_get_attachment_image( (int) $billie_jetpack_options['featured-image'], 'billie-jetpack-logo' );
 				}
 
-				if ( isset( $jetpack_options['page-content'] ) && '' !== $jetpack_options['page-content'] ) {
-					echo convert_chars( convert_smilies( wptexturize( stripslashes( wp_filter_post_kses( addslashes( $jetpack_options['page-content'] ) ) ) ) ) );
+				if ( isset( $billie_jetpack_options['page-content'] ) && '' !== $billie_jetpack_options['page-content'] ) {
+					echo convert_chars( convert_smilies( wptexturize( stripslashes( wp_filter_post_kses( addslashes( $billie_jetpack_options['page-content'] ) ) ) ) ) );
 				}
 				?>
 			</header><!-- .page-header -->
 
 			<?php
-			while ( have_posts() ) :
+			while ( have_posts() ) {
 				the_post();
 				get_template_part( 'content', 'testimonial-single' );
-			endwhile;
-		endif;
+			}
+		}
 		?>
 
 		</main><!-- #main -->

@@ -25,11 +25,11 @@ if ( ! function_exists( 'billie_setup' ) ) {
 
 		add_theme_support( 'woocommerce' );
 
-		add_theme_support( 'jetpack-responsive-videos' );
-
 		add_theme_support( 'jetpack-testimonial' );
 
 		add_theme_support( 'jetpack-portfolio' );
+
+		add_theme_support( 'responsive-embeds' );
 
 		add_editor_style();
 
@@ -65,6 +65,8 @@ if ( ! function_exists( 'billie_setup' ) ) {
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
 		add_theme_support( 'wp-block-styles' );
+
+		add_theme_support( 'align-wide' );
 
 		add_theme_support(
 			'editor-color-palette',
@@ -160,11 +162,11 @@ if ( ! get_theme_mod( 'billie_hide_title' ) ) {
 function billie_widgets_init() {
 	register_sidebar(
 		array(
-			'name'          => __( 'Sidebar for posts', 'billie' ),
+			'name'          => __( 'Sidebar for posts and pages', 'billie' ),
 			'id'            => 'sidebar-1',
 			'description'   => '',
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</aside>',
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
 			'before_title'  => '<h3 class="widget-title">',
 			'after_title'   => '</h3>',
 		)
@@ -175,8 +177,8 @@ function billie_widgets_init() {
 			'name'          => __( 'Front page Sidebar', 'billie' ),
 			'id'            => 'sidebar-3',
 			'description'   => '',
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</aside>',
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
 			'before_title'  => '<h3 class="widget-title">',
 			'after_title'   => '</h3>',
 		)
@@ -187,8 +189,8 @@ function billie_widgets_init() {
 			'name'          => __( 'Sidebar for archives and search results', 'billie' ),
 			'id'            => 'sidebar-4',
 			'description'   => '',
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</aside>',
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
 			'before_title'  => '<h3 class="widget-title">',
 			'after_title'   => '</h3>',
 		)
@@ -199,8 +201,8 @@ function billie_widgets_init() {
 			'name'          => __( 'Footer widget area', 'billie' ),
 			'id'            => 'sidebar-2',
 			'description'   => '',
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</aside>',
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
 			'before_title'  => '<h3 class="widget-title">',
 			'after_title'   => '</h3>',
 		)
@@ -254,8 +256,10 @@ if ( ! function_exists( 'billie_fonts_url' ) ) {
 				array(
 					'family' => rawurlencode( implode( '|', $fonts ) ),
 					'subset' => rawurlencode( $subsets ),
+					'display' => urlencode( 'fallback' ),
 				),
-			'//fonts.googleapis.com/css' );
+				'//fonts.googleapis.com/css'
+			);
 		}
 
 		return $fonts_url;
@@ -266,7 +270,7 @@ if ( ! function_exists( 'billie_fonts_url' ) ) {
  * Enqueue scripts and styles.
  */
 function billie_scripts() {
-	wp_enqueue_style( 'billie-style', get_stylesheet_uri(), array( 'dashicons' ) );
+	wp_enqueue_style( 'billie-style', get_stylesheet_uri() );
 	wp_style_add_data( 'billie-style', 'rtl', 'replace' );
 	wp_enqueue_style( 'billie-fonts', billie_fonts_url(), array(), null );
 	wp_enqueue_style( 'open-sans' );
@@ -372,20 +376,6 @@ if ( ! function_exists( 'billie_call_to_action' ) ) {
  */
 function billie_customize_css() {
 	echo '<style type="text/css">';
-	if ( is_admin_bar_showing() ) {
-		?>
-		.main-navigation {top:32px;}
-
-		@media screen and ( max-width: 782px ) {
-			.main-navigation {top:46px;}
-		}
-
-		@media screen and ( max-width: 600px ) {
-			.main-navigation {top:0px;}
-		}
-		<?php
-	}
-
 	echo '.site-title, .site-description{color:#' . esc_attr( get_header_textcolor() ) . ';} ';
 
 	$header_image = get_header_image();

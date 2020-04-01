@@ -11,10 +11,10 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 		<?php
-		while ( have_posts() ) :
+		while ( have_posts() ) {
 			the_post();
 			get_template_part( 'content', 'testimonial-single' );
-		endwhile;
+		}
 		// end of the loop.
 		?>
 

@@ -21,7 +21,7 @@ if ( have_posts() && is_post_type_archive( 'jetpack-portfolio' ) || is_tax( 'jet
 
 			<section class="featured-wrap">
 				<?php
-				while ( have_posts() ) :
+				while ( have_posts() ) {
 					the_post();
 					?>
 					<div class="featured-post">
@@ -50,7 +50,7 @@ if ( have_posts() && is_post_type_archive( 'jetpack-portfolio' ) || is_tax( 'jet
 						$posted_on = $time_string;
 						echo $posted_on;
 						echo '</span></span></div></div>';
-				endwhile;
+				}
 				?>
 			</section>
 

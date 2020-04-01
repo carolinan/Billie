@@ -14,8 +14,8 @@ function billie_customize_register( $wp_customize ) {
 		array(
 			'priority'    => 70,
 			'capability'  => 'edit_theme_options',
-			'title'       => __( 'Front page sections', 'billie' ),
-			'description' => __( 'Display pages as different sections of the front page.', 'billie' ),
+			'title'       => __( 'Page sections', 'billie' ),
+			'description' => __( 'Display pages as different sections above or below your page content.', 'billie' ),
 		)
 	);
 
@@ -135,7 +135,7 @@ function billie_customize_register( $wp_customize ) {
 		'billie_hide_meta',
 		array(
 			'type'    => 'checkbox',
-			'label'   => __( 'Check this box to hide the meta information.', 'billie' ),
+			'label'   => __( 'Check this box to hide the meta information in the post footer.', 'billie' ),
 			'section' => 'billie_section_advanced',
 		)
 	);

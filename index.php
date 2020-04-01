@@ -21,10 +21,10 @@ billie_featured_sections();
 		billie_top_sections();
 
 		if ( have_posts() ) {
-			while ( have_posts() ) :
+			while ( have_posts() ) {
 				the_post();
 				get_template_part( 'content', get_post_format() );
-			endwhile;
+			}
 			the_posts_navigation();
 		} else {
 			get_template_part( 'content', 'none' );

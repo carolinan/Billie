@@ -1,14 +1,13 @@
 === Billie ===
 Contributors: Poena
 Requires at least: 5.0
-Tested up to: 5.2
+Tested up to: 5.4
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Copyright: 2015-2019 Carolina Nymark
+Copyright: 2015-2020 Carolina Nymark
 
 Billie is a responsive accessible blog theme with a call to action and search form in the header.
-
 
 = Description ==
 Billie is a responsive accessible blog theme. The theme has two optional menus (including a social menu),
@@ -20,18 +19,59 @@ contact forms, testimonials, social sharing and more.
 To create a portfolio, install Jetpack and create your projects, all the templates are already shipped with the theme.
 Billie also works well with WooCommerce.
 
-
 == Installation ==
 1. Unzip `billie.zip` to the `/wp-content/themes/` directory
 2. Activate the theme through the 'Appearance' menu in WordPress
 
 == Change log ==
 
+Version 1.1.1 2020-03-31
+
+Fixed a critical issue with the main menu on tablets. Updated navigation.js.
+Several improvements for the menu:
+Markup: Moved the navigation out of the header tag.
+Support for more sub menu levels.
+Sub menu items now show in the responsive menu and the menu is properly centered.
+Increased the size of the menu items in the responsive menu,
+to make them easier to click on mobile phones.
+
+The default content width has been decreased.
+This was an important step to take, to finally be able to use wide and full width blocks in the editor.
+This is most visible when no sidebar is used. 
+You will see a change in the design, but this change is important to 
+improve the readability and accessibility of your website.
+Improvements have also been made for the width, paddings and margins of the content
+on mobile phones. This makes the content easier to read.
+
+Removed dashicons, since it was slowing the theme down.
+You will see a change of the arrows in the main menu.
+
+Improvements of the block editor styles to keep up with recent changes and to better
+match the editor and the front.
+
+Replaced theme support for Jetpack responsive videos with the WordPress
+responsive embeds since these must not be enabled at the same time.
+
+Featured images are now centered instead of left aligned.
+
+The front page section panel has been renamed Page sections,
+since they work on all pages where the template is used.
+
+Font sizes are now more responsive.
+The number of font-sizes used has been reduced.
+The content text size has been increased to improve accessibility.
+Several pixel values has been replaced with relative units and are now more consistent and uniform.
+
+The entry footer has been changed from a footer tag to a div to improve accessibility.
+Widgets has been changed from aside to div to improve accessibilility.
+Improve the responsiveness of the widgets on different screensizes.
+
+CSS and PHP code style changes according to WordPress coding standards.
+
 Version 1.1.0 2019-05-09
 Added support for wp_body_open.
 Added a block style for the gallery which hides the image captions.
 Updated required WordPress version and PHP version.
-
 
 Version 1.0.9 2018-11-28
 Housekeeping: Updated links. Updated credits in the readme file. Removed admin.css since it was no longer used. 
@@ -108,11 +148,11 @@ Initial release
 
 == Resources Used In This Theme ==
 Billie is a derivative work of:
-Underscores https://underscores.me/, (C) 2012-2018 Automattic, Inc. License: GNU General Public License v2 or later
+Underscores https://underscores.me/, (C) 2012-2020 Automattic, Inc. License: GNU General Public License v2 or later
 Universal https://themes.joedolson.com/universal/ (C) Joseph C Dolson. License: GNU General Public License v2 or later
 Sela https://wordpress.com/themes/sela/, based on Underscores https://underscores.me/, 
 (C) 2012-2018 Automattic, Inc. License: GNU General Public License v2 or later
-Aaron Copyright 2015-2018 Carolina Nymark License: GNU General Public License v2 or later
+Aaron Copyright 2015-2020 Carolina Nymark License: GNU General Public License v2 or later
 Casper Copyright (c) 2013-2018 Ghost Foundation - Released under the MIT License. https://github.com/TryGhost/Casper
 
 Header image by Nick Graham. Source: https://tookapic.com/photos/8709#comment-8335, License: CC0. -Thank you!

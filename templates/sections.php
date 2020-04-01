@@ -13,9 +13,10 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 			<?php
 			billie_top_sections();
-			while ( have_posts() ) : the_post();
+			while ( have_posts() ) {
+				the_post();
 				get_template_part( 'content', 'page' );
-			endwhile;
+			}
 			billie_bottom_sections();
 			?>
 		</main><!-- #main -->

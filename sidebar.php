@@ -7,7 +7,7 @@
 
 if ( is_archive() && is_active_sidebar( 'sidebar-4' ) || is_search() && is_active_sidebar( 'sidebar-4' ) ) {
 	?>
-	<div id="secondary" class="widget-area" role="complementary">
+	<div id="secondary" class="widget-area" role="complementary" aria-label="<?php esc_attr_e( 'Archive sidebar', 'billie' ); ?>">
 		<h2 class="screen-reader-text"><?php esc_html_e( 'Sidebar', 'billie' ); ?></h2>
 		<?php dynamic_sidebar( 'sidebar-4' ); ?>
 	</div><!-- #secondary -->
@@ -17,7 +17,7 @@ if ( is_archive() && is_active_sidebar( 'sidebar-4' ) || is_search() && is_activ
 		return;
 	}
 	?>
-	<div id="secondary" class="widget-area" role="complementary">
+	<div id="secondary" class="widget-area" role="complementary" aria-label="<?php esc_attr_e( 'Post sidebar', 'billie' ); ?>">
 		<h2 class="screen-reader-text"><?php esc_html_e( 'Sidebar', 'billie' ); ?></h2>
 		<?php dynamic_sidebar( 'sidebar-1' ); ?>
 	</div><!-- #secondary -->

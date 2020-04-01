@@ -1,19 +1,17 @@
-.edit-post-visual-editor,
-.edit-post-visual-editor .editor-block-list__block-edit,
-.edit-post-visual-editor .editor-block-list__block {
-   font-family: 'Open Sans', sans-serif;
+.edit-post-visual-editor.editor-styles-wrapper {
+	font-family: 'Open Sans', sans-serif;
 }
 
 /* Matches entry-title in style.css. */
 .editor-post-title__block .editor-post-title__input {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2rem;
-    text-decoration: none;
-    padding-bottom: 4px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: normal;
-    background: url(../images/border.png) repeat-x bottom;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 2rem;
+	text-decoration: none;
+	padding-bottom: 4px;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-weight: normal;
+	background: url(../images/border.png) repeat-x bottom;
 }
 
 a:focus {
@@ -30,11 +28,11 @@ a img {
 }
 
 a {
-    text-decoration: underline;
+	text-decoration: underline;
 }
 
 a:hover {
-    text-decoration: none;
+	text-decoration: none;
 }
 
 a {
@@ -51,19 +49,46 @@ a:active {
 	color: #000;
 }
 
+.wp-block {
+	max-width: 33rem;
+}
+
 .wp-block-button__link {
-    text-decoration: underline;
+	text-decoration: underline;
 }
 
 .wp-block-button__link:hover,
 .wp-block-button__link:focus {
-    text-decoration: none;
+	text-decoration: none;
 }
 
-/*increase contrast*/
-.edit-post-visual-editor p.wp-block-subhead {
-    color: #000;
+.wp-block-table td,
+.wp-block-table th {
+	border: 1px solid #ccc;
 }
+
+pre {
+	background: #eee;
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	line-height: 1.6;
+	margin-bottom: 1.5rem;
+	max-width: 100%;
+	overflow: hidden;
+	padding: 1.6em;
+	word-wrap: break-word;
+	white-space: pre-wrap;
+}
+
+.wp-block-code {
+	font-family: Menlo, Consolas, monaco, monospace;
+	color: currentColor;
+	padding: 0.8em 1em;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	background: transparent;
+}
+
+/* Increase contrast */
 
 .wp-block-latest-comments__comment-date,
 .wp-block-quote cite,

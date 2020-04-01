@@ -43,7 +43,7 @@ if ( ! function_exists( 'billie_entry_footer' ) ) {
 	 */
 	function billie_entry_footer() {
 		if ( ! get_theme_mod( 'billie_hide_meta' ) ) {
-			echo '<footer class="entry-footer">';
+			echo '<div class="entry-footer">';
 			// Hide category and tag text for pages.
 			if ( 'post' == get_post_type() ) {
 				/* translators: used between list items, there is a space after the comma */
@@ -71,7 +71,7 @@ if ( ! function_exists( 'billie_entry_footer' ) ) {
 				$billie_custom_likes = new Jetpack_Likes();
 				echo $billie_custom_likes->post_likes( '' );
 			}
-			echo '</footer><!-- .entry-footer -->';
+			echo '</div><!-- .entry-footer -->';
 		}
 	}
 } // End if().
@@ -83,7 +83,7 @@ if ( ! function_exists( 'billie_portfolio_footer' ) ) {
 	 */
 	function billie_portfolio_footer() {
 		if ( ! get_theme_mod( 'billie_hide_meta' ) ) {
-			echo '<footer class="entry-footer">';
+			echo '<div class="entry-footer">';
 
 			global $post;
 			// the_terms( $id, $taxonomy, $before, $sep, $after ).
@@ -102,7 +102,7 @@ if ( ! function_exists( 'billie_portfolio_footer' ) ) {
 				$billie_custom_likes = new Jetpack_Likes();
 				echo $billie_custom_likes->post_likes( '' );
 			}
-			echo '</footer><!-- .entry-footer -->';
+			echo '</div><!-- .entry-footer -->';
 		}
 	}
 }
