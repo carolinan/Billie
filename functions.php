@@ -414,6 +414,16 @@ function billie_customize_css() {
 			margin-top:-25px;
 		}';
 	}
+
+	// Menu colors.
+	if ( get_theme_mod( 'billie_menu_bgcolor' ) ) {
+		echo '.main-navigation a, .main-navigation a:hover, .main-navigation a:focus, .main-navigation ul ul a {background:' . esc_attr( get_theme_mod( 'billie_menu_bgcolor' ) ) . ';}';
+	}
+
+	if ( get_theme_mod( 'billie_menu_color', '#000' ) !== '#000' ) {
+		echo '.main-navigation a, .main-navigation a:hover, .main-navigation a:focus, .main-navigation ul ul a {color:' . esc_attr( get_theme_mod( 'billie_menu_color' ) ) . ';}';
+	}
+
 	echo '</style>' . "\n";
 }
 add_action( 'wp_head', 'billie_customize_css' );

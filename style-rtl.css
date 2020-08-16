@@ -1,15 +1,18 @@
 /*
 Theme Name: Billie
-Theme URI: https://demos.themesbycarolina.com/billie
+Theme URI:
 Author: Carolina Nymark
 Author URI: https://themesbycarolina.com
 Description: Billie is a responsive, accessible blog theme. The theme has two optional menus (including a social menu), several different sidebars and a footer widget area that will hold any number of widgets. The theme is compatible with the new block editor, and also includes a Call To Action button and two page sections that you can combine with your front page. I recommend that you install the Jetpack plugin to make full use of supported features like featured content, contact forms, testimonials, social sharing and more. To create a portfolio, install Jetpack and create your projects, all the templates are already shipped with the theme. Billie also works well with WooCommerce.
-Version: 1.1.1
+Version: 1.1.3
+Requires at least: 5.0
+Tested up to: 5.5
+Requires PHP: 5.6
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Copyright: Carolina Nymark 2015-2020
 Text Domain: billie
-Tags: threaded-comments, custom-menu, sticky-post, editor-style, translation-ready, rtl-language-support, one-column, two-columns, right-sidebar, featured-images, accessibility-ready, custom-header, custom-logo, footer-widgets, blog
+Tags: threaded-comments, custom-menu, sticky-post, editor-style, block-styles, wide-blocks, translation-ready, rtl-language-support, one-column, two-columns, right-sidebar, featured-images, accessibility-ready, custom-header, custom-logo, footer-widgets, blog
 
 Resetting and rebuilding styles have been helped along
 thanks to the fine work of Eric Meyer
@@ -1738,9 +1741,26 @@ article .sd-social-text .sd-content ul li a.sd-button {
 	margin-bottom: 2rem;
 }
 
-/*Jetpack Portfolio*/
-.tax-jetpack-portfolio-type .page-title,
-.post-type-archive-jetpack-portfolio .page-title {
+/*Jetpack portfolio and testimonials*/
+.post-type-archive-jetpack-portfolio .content-area,
+.post-type-archive-jetpack-testimonial .content-area {
+	margin: 0 auto;
+	width: 100%;
+	text-align: center;
+}
+
+.post-type-archive-jetpack-portfolio .page-header,
+.post-type-archive-jetpack-testimonial .page-header {
+	margin: 0 auto 2em auto;
+	width: 80%
+}
+
+.post-type-archive-jetpack-portfolio .page-title,
+.post-type-archive-jetpack-testimonial .page-title {
+	margin: 0;
+}
+
+.tax-jetpack-portfolio-type .page-title {
 	text-align: center;
 	margin: 0;
 }
@@ -1751,25 +1771,11 @@ article .sd-social-text .sd-content ul li a.sd-button {
 	text-align: center;
 }
 
-.portfolio-type-links a {
-	font-style: italic;
-}
-
 .jetpack-portfolio-type {
 	display: inline-block;
 	margin-bottom: 0.5rem;
 }
 
-.post-type-archive-jetpack-testimonial .content-area {
-	margin: 0 auto;
-	width: 100%;
-}
-
-.post-type-archive-jetpack-testimonial .page-header {
-	text-align: center;
-}
-
-.testimonial-entry-title,
 .jetpack-testimonial .entry-title {
 	background: none;
 	text-align: center;
@@ -1782,19 +1788,12 @@ article .sd-social-text .sd-content ul li a.sd-button {
 	display: block;
 }
 
-.testimonial-entry-title a:focus,
-.testimonial-entry-title a:hover {
-	text-decoration: underline !important; /*We need to overwrite Jetpacks styling here...*/
-}
-
-.testimonial-entry-content,
 .jetpack-testimonial .entry-content {
 	width: 100%;
 	text-align: center;
 	font-style: italic;
 }
 
-.testimonial-entry,
 .post-type-archive-jetpack-testimonial .type-jetpack-testimonial {
 	display: inline-block;
 	margin: 0 2rem 1rem 2rem;
@@ -1809,18 +1808,6 @@ article .sd-social-text .sd-content ul li a.sd-button {
 	display: block;
 }
 
-.testimonial-featured-image {
-	margin: 1rem auto !important; /*We need to overwrite Jetpacks styling here...*/
-	text-align: center;
-	display: block;
-}
-
-.testimonial-featured-image img:focus,
-.testimonial-featured-image img:hover {
-	border: 4px solid #9cc9c7 !important; /*We need to overwrite Jetpacks styling here...*/
-}
-
-.testimonial-featured-image img,
 .attachment-billie-jetpack-testimonial {
 	width: 100px;
 	height: 100px;
@@ -2180,7 +2167,7 @@ span.bbp-admin-links a,
 	color: #333;
 }
 
- blockquote.wp-block-quote.is-style-large p {
+blockquote.wp-block-quote.is-style-large p {
 	font-size: 1.5rem;
 	line-height: 1.6;
  }
@@ -2240,7 +2227,6 @@ p.has-drop-cap::first-letter {
 	.content-area {
 		width: 100%;
 		margin: 0 auto;
-		padding: 0;
 	}
 
 	.site-content .widget-area {
@@ -2318,6 +2304,7 @@ p.has-drop-cap::first-letter {
 	.type-post,
 	.jetpack-testimonial,
 	.jetpack-testimonial .entry-content,
+	.content-area,
 	.single-jetpack-portfolio .content-area,
 	.no-sidebar .content-area,
 	.search-results .content-area,
@@ -2352,13 +2339,16 @@ p.has-drop-cap::first-letter {
 		text-align: center;
 	}
 
-	
 	.site-footer .widget-area,
 	.site-content .widget-area {
 		width: 100%;
 		margin: 0 auto;
 		padding: 0;
 		display: block;
+	}
+
+	.site-content .widget-area {
+		padding: 0.5rem 1rem;
 	}
 
 	.site-footer .widget,
@@ -2370,10 +2360,6 @@ p.has-drop-cap::first-letter {
 }
 
 @media screen and (max-width: 600px) {
-
-	.testimonial-entry {
-		width: 100% !important;
-	}
 
 	.featured-wrap {
 		text-align: center;
@@ -2401,4 +2387,10 @@ p.has-drop-cap::first-letter {
 		margin: 0 auto 2rem auto;
 		float: none;
 	}
+
+	.post-type-archive-jetpack-portfolio .page-header,
+	.post-type-archive-jetpack-testimonial .page-header {
+		width: 100%;
+	}
+
 }

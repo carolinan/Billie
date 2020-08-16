@@ -14,7 +14,7 @@
 		<?php
 		if ( is_active_sidebar( 'sidebar-2' ) ) {
 			?>
-			<div class="widget-area" role="complementary">
+			<div class="widget-area">
 				<?php dynamic_sidebar( 'sidebar-2' ); ?>
 			</div><!-- #secondary -->
 			<?php

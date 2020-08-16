@@ -27,6 +27,47 @@ function billie_customize_register( $wp_customize ) {
 		)
 	);
 
+	$wp_customize->add_setting(
+		'billie_menu_color',
+		array(
+			'default'           => '#000000',
+			'sanitize_callback' => 'sanitize_hex_color',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'billie_menu_color',
+			array(
+				'label'    => __( 'Menu link color', 'billie' ),
+				'section'  => 'colors',
+				'settings' => 'billie_menu_color',
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		'billie_menu_bgcolor',
+		array(
+			'default'           => '',
+			'sanitize_callback' => 'sanitize_hex_color',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'billie_menu_bgcolor',
+			array(
+				'label'    => __( 'Menu background color', 'billie' ),
+				'section'  => 'colors',
+				'settings' => 'billie_menu_bgcolor',
+			)
+		)
+	);
+
+
 	$wp_customize->get_section( 'header_image' )->title = __( 'Header background', 'billie' );
 
 	$wp_customize->add_setting(

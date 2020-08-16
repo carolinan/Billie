@@ -1,16 +1,16 @@
 === Billie ===
 Contributors: Poena
 Requires at least: 5.0
-Tested up to: 5.4
+Tested up to: 5.5
 Requires PHP: 5.6
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Copyright: 2015-2020 Carolina Nymark
 
-Billie is a responsive accessible blog theme with a call to action and search form in the header.
+Billie is a responsive, accessible blog theme with a call to action and search form in the header.
 
 = Description ==
-Billie is a responsive accessible blog theme. The theme has two optional menus (including a social menu),
+Billie is a responsive and accessible blog theme. The theme has two optional menus (including a social menu),
 several different sidebars and a footer widget area that will hold any number of widgets. 
 The theme is compatible with the new block editor, and also includes a Call To Action button 
 and two page sections that you can combine with your front page.
@@ -24,6 +24,17 @@ Billie also works well with WooCommerce.
 2. Activate the theme through the 'Appearance' menu in WordPress
 
 == Change log ==
+
+Version 1.1.3 2020-08-16
+Added required items to style.css.
+Removed theme URI, since it was not maintained.
+
+
+Version 1.1.2 2020-04-08
+Small fix for the spacing around single post and page content and widgets in responsive view.
+Impoved the layout of the portfolio and testimonal archive pages.
+Removed unused CSS.
+Added color options for the main menu.
 
 Version 1.1.1 2020-03-31
 
