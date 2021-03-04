@@ -14,7 +14,11 @@ get_header(); ?>
 		while ( have_posts() ) {
 			the_post();
 			get_template_part( 'content', 'single' );
-			the_post_navigation();
+			$navigation_args = array(
+				'prev_text' => '<span class="screen-reader-text">Previous post: %title</span>',
+				'next_text' => '<span class="screen-reader-text">Next post: %title</span>'
+			);
+			the_post_navigation( $navigation_args );
 
 			// If comments are open or we have at least one comment, load up the comment template.
 			if ( comments_open() || get_comments_number() ) {
